@@ -11,7 +11,7 @@ def usage
  puts "unicornctl <command> [pid_path]"
  puts "Provide one of the following commands:"
  puts SIGNALS_MAP.keys.join(", ")
- puts 
+ puts
  puts "Pid path default relative to the current directory: tmp/pids/unicorn.pid"
  exit
 end
@@ -23,10 +23,10 @@ pid_path = ARGV[1] || Dir.pwd + "/tmp/pids/unicorn.pid"
 if File.exists?(pid_path)
   old_pid = File.read(pid_path).strip
   command = ARGV[0].downcase
-  
-  puts "Restarting pid #{old_pid}..."  
+
+  puts "Restarting pid #{old_pid}..."
   Process.kill(SIGNALS_MAP[command], File.read(pid_path).to_i)
-  
+
   tries = 0
   begin
     sleep 2
