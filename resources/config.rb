@@ -20,7 +20,6 @@ attribute :cow_friendly, :kind_of => [TrueClass, FalseClass], :required => false
 attribute :user, :kind_of => String, :required => false, :default => 'www-data'
 attribute :group, :kind_of => String, :required => false, :default => 'www-data'
 attribute :worker_processes, :kind_of => String, :required => false, :default => 1
-attribute :preload_app, :kind_of => [TrueClass, FalseClass], :required => false, :default => true
 
 attribute :max_memory_usage_mb, :kind_of => Integer, :required => false, :default => 100
 attribute :max_cpu_usage_percent, :kind_of => Integer, :required => false, :default => 20
@@ -30,4 +29,3 @@ attribute :stop_grace_time, :kind_of => Fixnum, :required => false, :default => 
 attribute :restart_grace_time, :kind_of => Fixnum, :required => false, :default => 60
 
 attribute :template_source, :kind_of => String, :required => false, :default => 'unicorn.app.erb'
-attribute :cookbook, :kind_of => String, :required => false, :default => 'unicorn'

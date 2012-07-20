@@ -1,7 +1,7 @@
 
-include_recipe "bluepill"
+# include_recipe "bluepill"
 
-chef_gem "bluepill"
+# chef_gem "bluepill"
 
 cookbook_file "/usr/local/bin/unicornctl" do
   mode  0755
